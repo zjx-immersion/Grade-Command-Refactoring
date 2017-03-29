@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef497401-a1c9-4ebb-b9fb-268ccb1245a3" name="Default" comment="" />
+    <list default="true" id="ef497401-a1c9-4ebb-b9fb-268ccb1245a3" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/student_system/System.js" afterPath="$PROJECT_DIR$/lib/student_system/System.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/student_system/SystemSpec.js" afterPath="$PROJECT_DIR$/spec/student_system/SystemSpec.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -18,8 +21,8 @@
       <file leaf-file-name="SystemSpec.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/student_system/SystemSpec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="40" />
+            <state relative-caret-position="551">
+              <caret line="30" column="54" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -48,8 +51,8 @@
       <file leaf-file-name="System.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/student_system/System.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+            <state relative-caret-position="133">
+              <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -83,8 +86,8 @@
         <option value="$PROJECT_DIR$/lib/student_system/Subject.class.js" />
         <option value="$PROJECT_DIR$/lib/student_system/Subject.js" />
         <option value="$PROJECT_DIR$/lib/student_system/Student.js" />
-        <option value="$PROJECT_DIR$/spec/student_system/SystemSpec.js" />
         <option value="$PROJECT_DIR$/lib/student_system/Class.js" />
+        <option value="$PROJECT_DIR$/spec/student_system/SystemSpec.js" />
         <option value="$PROJECT_DIR$/lib/student_system/System.js" />
       </list>
     </option>
@@ -311,12 +314,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1490770517155</updated>
-      <workItem from="1490770518737" duration="4697000" />
+      <workItem from="1490770518737" duration="5103000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4697000" />
+    <option name="totallyTimeSpent" value="5103000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-4" width="1368" height="773" extended-state="6" />
@@ -378,16 +381,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/student_system/SystemSpec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="40" />
+        <state relative-caret-position="551">
+          <caret line="30" column="54" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/student_system/System.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+        <state relative-caret-position="133">
+          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
           <folding />
         </state>
       </provider>
