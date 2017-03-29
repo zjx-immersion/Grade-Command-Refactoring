@@ -1,4 +1,7 @@
 describe('system', function () {
+  const System = require('../../lib/student_system/System');
+  const Student = require('../../lib/student_system/Student');
+  const Subject = require('../../lib/student_system/Subject');
   let system;
   beforeEach(function () {
     system = new System();
