@@ -18,8 +18,8 @@ describe('system', function () {
 
   it('should return updated classes when given a new student', function () {
     const subject = new Subject(90, 80, 70, 100);
-    const student = new Student('Melo', 24, 'Han', 1, subject);
     let classNumber = 1;
+    const student = new Student('Melo', 24, 'Han', classNumber, subject);
     let expectClass = new Class(classNumber);
     expectClass.addStudent(student);
     expect(system.updateClasses(student)).toEqual([expectClass]);
@@ -30,4 +30,17 @@ describe('system', function () {
     system.parseInput(input);
     expect(system.consoleState).toEqual('ADD_STUDENT');
   });
+
+  it('should add student into classes and set console state when given a studentStr input', function () {
+    const input = 'Melo,24,Han,1,math:90,chinese:80,english:70,program:100';
+    const subject = new Subject(90, 80, 70, 100);
+    let classNumber = 1;
+    const student = new Student('Melo', 24, 'Han', classNumber, subject);
+    const expectClass = new Class(classNumber);
+    expectClass.addStudent(student);
+    system.consoleState = 'ADD_STUDENT';
+    system.parseInput(input);
+    expect(system.classes).toEqual([expectClass]);
+    expect(system.consoleState).toEqual('COMMAND');
+  })
 });
