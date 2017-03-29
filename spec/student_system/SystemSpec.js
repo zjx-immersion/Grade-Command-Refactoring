@@ -24,4 +24,10 @@ describe('system', function () {
     expectClass.addStudent(student);
     expect(system.updateClasses(student)).toEqual([expectClass]);
   });
+
+  it('should set console state to input student after input command 1', function () {
+    let input = '1';
+    system.parseCommand(input);
+    expect(system.consoleState).toEqual('INPUT_STUDENT');
+  });
 });
