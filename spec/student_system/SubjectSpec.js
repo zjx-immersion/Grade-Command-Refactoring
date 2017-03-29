@@ -6,4 +6,7 @@ describe('subject', function () {
   it('should return average when average is not a integer', function () {
     expect(new Subject(90, 92, 93, 94).calAverage()).toEqual(92.25);
   });
+  it('should return total score when invoke subject.calTotal', function () {
+    expect(new Subject(90, 90, 90, 90).calTotal()).toEqual(360);
+  })
 });
