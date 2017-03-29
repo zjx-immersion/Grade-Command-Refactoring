@@ -18,7 +18,8 @@ describe('system', function () {
   it('should return updated classes when given a new student', function () {
     const subject = new Subject(90, 80, 70, 100);
     const student = new Student('Melo', 24, 'Han', 1, subject);
-    let expectClass = new Class();
+    let classNumber = 1;
+    let expectClass = new Class(classNumber);
     expectClass.addStudent(student);
     expect(system.updateClasses(student)).toEqual([expectClass]);
   });
