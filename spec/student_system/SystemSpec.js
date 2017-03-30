@@ -31,6 +31,12 @@ describe('system', function () {
     expect(system.consoleState).toEqual('ADD_STUDENT');
   });
 
+  it('should set console state to query scores after input command 2', function () {
+    let input = '2';
+    system.parseInput(input);
+    expect(system.consoleState).toEqual('QUERY_SCORE');
+  });
+
   it('should add student into classes and set console state when given a studentStr input', function () {
     const input = 'Melo,24,Han,1,math:90,chinese:80,english:70,program:100';
     const subject = new Subject(90, 80, 70, 100);
