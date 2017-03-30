@@ -59,12 +59,15 @@ describe('system', function () {
     const student1 = new Student('Melo', 8, 'han', 1, new Subject(90, 80, 80, 90));
     const student2 = new Student('Kobe', 24, 'han', 1, new Subject(100, 100, 100, 100));
     const student3 = new Student('James', 23, 'han', 1, new Subject(98, 98, 98, 98));
-    system.addStudent(student1);
-    system.addStudent(student2);
+    system.updateClasses(student1);
+    system.updateClasses(student2);
+    system.updateClasses(student3);
     const stuNumbers = [8, 24];
     const expectClass = new Class(1);
     expectClass.addStudent(student1);
     expectClass.addStudent(student2);
+    expectClass.median = 392;
+    expectClass.average = 377.33;
     expect(system.getClassesInfo(stuNumbers)).toEqual([expectClass]);
   });
 });
