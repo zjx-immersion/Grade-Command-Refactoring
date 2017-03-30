@@ -61,12 +61,6 @@ describe('system', function () {
     expect(system.consoleState).toEqual('COMMAND');
   });
 
-  it('should return stuNumbers when given input string of student numbers', function () {
-    const stuNumStr = '1,2,3';
-    const expectStuNumbers = ['1', '2', '3'];
-    expect(system.parseStuNumInput(stuNumStr)).toEqual(expectStuNumbers);
-  });
-
   it('should return classes has one class only with student which number in input', function () {
     const student1 = new Student('Melo', '8', 'han', '1', new Subject(90, 80, 80, 90));
     const student2 = new Student('Kobe', '24', 'han', '1', new Subject(100, 100, 100, 100));
