@@ -21,7 +21,7 @@ describe('system', function () {
     let classNumber = 1;
     const student = new Student('Melo', 24, 'Han', classNumber, subject);
     let expectClass = new Class(classNumber);
-    expectClass.addStudent(student);
+    expectClass.addStudent(student).updateScores();
     expect(system.updateClasses(student)).toEqual([expectClass]);
   });
 
@@ -37,7 +37,7 @@ describe('system', function () {
     let classNumber = 1;
     const student = new Student('Melo', 24, 'Han', classNumber, subject);
     const expectClass = new Class(classNumber);
-    expectClass.addStudent(student);
+    expectClass.addStudent(student).updateScores();
     system.consoleState = 'ADD_STUDENT';
     system.parseInput(input);
     expect(system.classes).toEqual([expectClass]);
@@ -92,9 +92,8 @@ describe('system', function () {
 
   it('should return score form string when given one class', function () {
     const student = new Student('Melo', 8, 'han', 1, new Subject(90, 80, 80, 90));
-    system.updateClasses(student);
     const inputClass = new Class(1);
-    inputClass.addStudent(student);
+    inputClass.addStudent(student).updateScores();
     const expectStr = `成绩单
 姓名|数学|语文|英语|编程|平均分|总分
 ==================
@@ -112,8 +111,8 @@ Melo|90|80|80|90|85|340
     system.updateClasses(student2);
     const inputClass1 = new Class(1);
     const inputClass2 = new Class(2);
-    inputClass1.addStudent(student1);
-    inputClass2.addStudent(student2);
+    inputClass1.addStudent(student1).updateScores();
+    inputClass2.addStudent(student2).updateScores();
     const expectStr = `成绩单
 姓名|数学|语文|英语|编程|平均分|总分
 ==================
