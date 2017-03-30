@@ -145,8 +145,8 @@ Kobe|90|80|80|90|85|340
   it('should console log socre when input student number', function () {
     system.consoleState = 'QUERY_SCORE';
     system.updateClasses(new Student('Melo', 8, 'han', 1, new Subject(90, 80, 80, 90)));
-    system.parseInput('8');
     spyOn(console, 'log');
+    system.parseInput('8');
     const expectStr = `成绩单
 姓名|数学|语文|英语|编程|平均分|总分
 ==================
