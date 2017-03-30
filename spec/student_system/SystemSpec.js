@@ -142,7 +142,7 @@ Kobe|90|80|80|90|85|340
     expect(system.transScoreFormToString([inputClass1, inputClass2])).toEqual(expectStr);
   });
 
-  it('should console log socre when input student number', function () {
+  it('should console log score and set console state to command when input student number', function () {
     system.consoleState = 'QUERY_SCORE';
     system.updateClasses(new Student('Melo', 8, 'han', 1, new Subject(90, 80, 80, 90)));
     spyOn(console, 'log');
@@ -155,5 +155,6 @@ Melo|90|80|80|90|85|340
 全班总成绩平均分:340
 全班总成绩中位数:340\n`;
     expect(console.log).toHaveBeenCalledWith(expectStr);
+    expect(system.consoleState).toEqual('COMMAND');
   });
 });
