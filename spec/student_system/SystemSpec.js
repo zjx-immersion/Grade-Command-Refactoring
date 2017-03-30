@@ -26,16 +26,22 @@ describe('system', function () {
   });
 
   it('should set console state to input student after input command 1', function () {
-    let input = '1';
+    const input = '1';
     system.parseInput(input);
     expect(system.consoleState).toEqual('ADD_STUDENT');
   });
 
   it('should set console state to query scores after input command 2', function () {
-    let input = '2';
+    const input = '2';
     system.parseInput(input);
     expect(system.consoleState).toEqual('QUERY_SCORE');
   });
+
+  it('should set console state to closed after input command 3', function () {
+    const input = '3';
+    system.parseInput(input);
+    expect(system.consoleState).toEqual('CLOSED');
+  })
 
   it('should add student into classes and set console state when given a studentStr input', function () {
     const input = 'Melo,24,Han,1,math:90,chinese:80,english:70,program:100';
