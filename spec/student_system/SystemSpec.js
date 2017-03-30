@@ -42,5 +42,11 @@ describe('system', function () {
     system.parseInput(input);
     expect(system.classes).toEqual([expectClass]);
     expect(system.consoleState).toEqual('COMMAND');
-  })
+  });
+
+  it('should return stuNumbers when given input string of student numbers', function () {
+    const stuNumStr = '1,2,3';
+    const expectStuNumbers = [1, 2, 3];
+    expect(system.parseStuNumInput(stuNumStr)).toEqual(expectStuNumbers);
+  });
 });
