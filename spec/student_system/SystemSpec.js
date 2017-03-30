@@ -101,7 +101,33 @@ describe('system', function () {
 Melo|90|80|80|90|85|340
 ==================
 全班总成绩平均分:340
-全班总成绩中位数:340`;
+全班总成绩中位数:340\n`;
     expect(system.transScoreFormToString([inputClass])).toEqual(expectStr);
+  });
+
+  it('should return score form string when given two classes', function () {
+    const student1 = new Student('Melo', 8, 'han', 1, new Subject(90, 80, 80, 90));
+    const student2 = new Student('Kobe', 24, 'han', 2, new Subject(90, 80, 80, 90));
+    system.updateClasses(student1);
+    system.updateClasses(student2);
+    const inputClass1 = new Class(1);
+    const inputClass2 = new Class(2);
+    inputClass1.addStudent(student1);
+    inputClass2.addStudent(student2);
+    const expectStr = `成绩单
+姓名|数学|语文|英语|编程|平均分|总分
+==================
+Melo|90|80|80|90|85|340
+==================
+全班总成绩平均分:340
+全班总成绩中位数:340
+成绩单
+姓名|数学|语文|英语|编程|平均分|总分
+==================
+Kobe|90|80|80|90|85|340
+==================
+全班总成绩平均分:340
+全班总成绩中位数:340\n`;
+    expect(system.transScoreFormToString([inputClass1, inputClass2])).toEqual(expectStr);
   });
 });
