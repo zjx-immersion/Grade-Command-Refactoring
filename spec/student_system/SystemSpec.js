@@ -142,6 +142,13 @@ Kobe|90|80|80|90|85|340
     expect(system.transScoreFormToString([inputClass1, inputClass2])).toEqual(expectStr);
   });
 
+  it('should add student and set console state to command when input student', function () {
+    system.consoleState = 'ADD_STUDENT';
+    system.parseInput('Melo,8,han,1,math:90,chinese:80,english:80,program:90');
+    const expectStudent = new Student('Melo', 8, 'han', 1, new Subject(90, 80, 80, 90));
+    expect(system.classes[0].students[0]).toEqual(expectStudent);
+  });
+
   it('should console log score and set console state to command when input student number', function () {
     system.consoleState = 'QUERY_SCORE';
     system.updateClasses(new Student('Melo', 8, 'han', 1, new Subject(90, 80, 80, 90)));
