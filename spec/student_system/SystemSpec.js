@@ -87,7 +87,7 @@ describe('system', function () {
     expectClass1.average = 370;
     expectClass2.median= 392;
     expectClass2.average = 392;
-    expect(system.getClassesInfo(stuNumbers)).toEqual([expectClass2, expectClass1]);
+    expect(system.getClassesInfo(stuNumbers)).toEqual([expectClass1, expectClass2]);
   });
 
   it('should return score form string when given one class', function () {
