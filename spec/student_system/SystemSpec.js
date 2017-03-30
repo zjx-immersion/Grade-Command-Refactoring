@@ -49,4 +49,9 @@ describe('system', function () {
     const expectStuNumbers = [1, 2, 3];
     expect(system.parseStuNumInput(stuNumStr)).toEqual(expectStuNumbers);
   });
+
+  it('should return NaN when given input string has something is not a number', function () {
+    const input = 'a';
+    expect(system.parseStuNumInput(input)).toEqual([NaN]);
+  });
 });
