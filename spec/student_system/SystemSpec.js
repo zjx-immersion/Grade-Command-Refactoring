@@ -89,4 +89,19 @@ describe('system', function () {
     expectClass2.average = 392;
     expect(system.getClassesInfo(stuNumbers)).toEqual([expectClass2, expectClass1]);
   });
+
+  it('should return score form string when given one class', function () {
+    const student = new Student('Melo', 8, 'han', 1, new Subject(90, 80, 80, 90));
+    system.updateClasses(student);
+    const inputClass = new Class(1);
+    inputClass.addStudent(student);
+    const expectStr = `成绩单
+姓名|数学|语文|英语|编程|平均分|总分
+==================
+Melo|90|80|80|90|85|340
+==================
+全班总成绩平均分:340
+全班总成绩中位数:340`;
+    expect(system.transScoreFormToString([inputClass])).toEqual(expectStr);
+  });
 });
