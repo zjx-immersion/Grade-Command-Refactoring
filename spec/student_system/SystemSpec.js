@@ -70,4 +70,23 @@ describe('system', function () {
     expectClass.average = 377.33;
     expect(system.getClassesInfo(stuNumbers)).toEqual([expectClass]);
   });
+
+  it('should retrun classes when given studnet not in one class', function () {
+    const student1 = new Student('Melo', 8, 'han', 1, new Subject(90, 80, 80, 90));
+    const student2 = new Student('Kobe', 24, 'han', 1, new Subject(100, 100, 100, 100));
+    const student3 = new Student('James', 23, 'han', 2, new Subject(98, 98, 98, 98));
+    system.updateClasses(student1);
+    system.updateClasses(student2);
+    system.updateClasses(student3);
+    const stuNumbers = [23, 24];
+    const expectClass1 = new Class(1);
+    const expectClass2 = new Class(2);
+    expectClass1.addStudent(student2);
+    expectClass2.addStudent(student3);
+    expectClass1.median = 370;
+    expectClass1.average = 370;
+    expectClass2.median= 392;
+    expectClass2.average = 392;
+    expect(system.getClassesInfo(stuNumbers)).toEqual([expectClass2, expectClass1]);
+  });
 });
