@@ -41,7 +41,7 @@ describe('system', function () {
     const input = '3';
     system.parseInput(input);
     expect(system.consoleState).toEqual('CLOSED');
-  })
+  });
 
   it('should add student into classes and set console state when given a studentStr input', function () {
     const input = 'Melo,24,Han,1,math:90,chinese:80,english:70,program:100';
@@ -140,5 +140,20 @@ Kobe|90|80|80|90|85|340
 全班总成绩平均分:340
 全班总成绩中位数:340\n`;
     expect(system.transScoreFormToString([inputClass1, inputClass2])).toEqual(expectStr);
+  });
+
+  it('should console log socre when input student number', function () {
+    system.consoleState = 'QUERY_SCORE';
+    system.updateClasses(new Student('Melo', 8, 'han', 1, new Subject(90, 80, 80, 90)));
+    system.parseInput('8');
+    spyOn(console, 'log');
+    const expectStr = `成绩单
+姓名|数学|语文|英语|编程|平均分|总分
+==================
+Melo|90|80|80|90|85|340
+==================
+全班总成绩平均分:340
+全班总成绩中位数:340\n`;
+    expect(console.log).toHaveBeenCalledWith(expectStr);
   });
 });
