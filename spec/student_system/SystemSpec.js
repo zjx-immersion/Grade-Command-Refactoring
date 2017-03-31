@@ -1,4 +1,25 @@
-describe('system', function () {
+describe('integration test', function () {
+    const System = require('../../lib/student_system/System');
+
+    it('should go through all right path', function () {
+        const system = new System();
+        const MAIN_MSG = `请输入命令:
+1.添加学生
+2.生成成绩单
+3.退出`;
+        expect(system.parseInput()).toEqual(MAIN_MSG);
+
+        expect(system.parseInput('1')).toEqual('请输入学生信息:(姓名,学号,民族,班级,数学:成绩,语文:成绩,英语:成绩,编程:成绩)');
+        expect(system.parseInput('zjx,001,han,01,math:99,语文:90,e:90,code:20')).toEqual(MAIN_MSG);
+        expect(system.parseInput('2')).toEqual('请输入要打印的学生学号:(学号,学号...)');
+        const result = system.parseInput('001');
+        expect(result.indexOf('299') > 0).toBe(true);
+        expect(result.indexOf('请输入') > 0).toBe(true);
+    });
+
+});
+
+xdescribe('system', function () {
   const System = require('../../lib/student_system/System');
   const Student = require('../../lib/student_system/Student');
   const Subject = require('../../lib/student_system/Subject');
@@ -13,6 +34,7 @@ describe('system', function () {
     });
     system = new System(rl);
   });
+
 
   it('should return student info when given an input string of student', function () {
     const inputStr = 'Melo,24,Han,1,math:90,chinese:80,english:70,program:100';
