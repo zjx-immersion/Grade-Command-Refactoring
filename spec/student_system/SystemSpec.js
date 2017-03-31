@@ -15,6 +15,7 @@ describe('integration test', function () {
         const result = system.parseInput('001');
         expect(result.indexOf('299') > 0).toBe(true);
         expect(result.indexOf('请输入') > 0).toBe(true);
+        expect(system.parseInput('3')).toBe('see you');
     });
 
 });
