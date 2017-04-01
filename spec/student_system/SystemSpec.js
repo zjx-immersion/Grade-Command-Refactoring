@@ -100,7 +100,7 @@ describe('integration test', function () {
 //         system.parseInput(input);
 //         expect(console.log).toHaveBeenCalledWith('请输入命令:\n1.添加学生\n2.生成成绩单\n3.退出');
 //         expect(system.classes).toEqual([expectClass]);
-//         expect(system.consoleState).toEqual('COMMAND');
+//         expect(system.consoleState).toEqual('MENU_COMMAND');
 //     });
 //
 //     it('should return classes has one class only with student which number in input', function () {
@@ -200,6 +200,6 @@ describe('integration test', function () {
 // 全班总成绩平均分:340
 // 全班总成绩中位数:340\n`;
 //         expect(console.log).toHaveBeenCalledWith(expectStr);
-//         expect(system.consoleState).toEqual('COMMAND');
+//         expect(system.consoleState).toEqual('MENU_COMMAND');
 //     });
 // });
