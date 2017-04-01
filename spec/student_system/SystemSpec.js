@@ -7,32 +7,32 @@ describe('integration test', function () {
 3.退出`;
     system = new System();
     it('should get main page', function () {
-        expect(system.parseInput()).toEqual(MAIN_MSG);
+        expect(system.input()).toEqual(MAIN_MSG);
     });
 
     it('should get add student msg given 1', () => {
-        expect(system.parseInput('1')).toEqual('请输入学生信息:(姓名,学号,民族,班级,数学:成绩,语文:成绩,英语:成绩,编程:成绩)');
+        expect(system.input('1')).toEqual('请输入学生信息:(姓名,学号,民族,班级,数学:成绩,语文:成绩,英语:成绩,编程:成绩)');
 
     });
 
     it('should add the student info given student str', () => {
-        expect(system.parseInput('zjx,001,han,01,math:99,语文:90,e:90,code:20')).toEqual(MAIN_MSG);
+        expect(system.input('zjx,001,han,01,math:99,语文:90,e:90,code:20')).toEqual(MAIN_MSG);
 
     });
 
     it('should get student course summary msg given 2', () => {
-        expect(system.parseInput('2')).toEqual('请输入要打印的学生学号:(学号,学号...)');
+        expect(system.input('2')).toEqual('请输入要打印的学生学号:(学号,学号...)');
 
     });
 
     it('should get the student course summery given student number 001', () => {
-        const result = system.parseInput('001');
+        const result = system.input('001');
         expect(result.indexOf('299') > 0).toBe(true);
         expect(result.indexOf('请输入') > 0).toBe(true);
     });
 
     it('should close given 3', () => {
-        expect(system.parseInput('3')).toBe('see you');
+        expect(system.input('3')).toBe('see you');
 
     });
 
@@ -75,7 +75,7 @@ describe('integration test', function () {
 //     it('should set console state to input student after input command 1', function () {
 //         const input = '1';
 //         spyOn(console, 'log');
-//         system.parseInput(input);
+//         system.input(input);
 //         expect(console.log).toHaveBeenCalledWith('请输入学生信息:(姓名,学号,民族,班级,数学:成绩,语文:成绩,英语:成绩,编程:成绩)');
 //         expect(system.consoleState).toEqual('ADD_STUDENT');
 //     });
@@ -83,7 +83,7 @@ describe('integration test', function () {
 //     it('should set console state to query scores after input command 2', function () {
 //         const input = '2';
 //         spyOn(console, 'log');
-//         system.parseInput(input);
+//         system.input(input);
 //         expect(console.log).toHaveBeenCalledWith('请输入要打印的学生学号:(学号,学号...)');
 //         expect(system.consoleState).toEqual('QUERY_SCORE');
 //     });
@@ -97,10 +97,10 @@ describe('integration test', function () {
 //         expectClass.addStudentAndUpdateScores(student);
 //         system.consoleState = 'ADD_STUDENT';
 //         spyOn(console, 'log');
-//         system.parseInput(input);
+//         system.input(input);
 //         expect(console.log).toHaveBeenCalledWith('请输入命令:\n1.添加学生\n2.生成成绩单\n3.退出');
 //         expect(system.classes).toEqual([expectClass]);
-//         expect(system.consoleState).toEqual('MENU_COMMAND');
+//         expect(system.consoleState).toEqual('MENU_COMMAND_EXEC');
 //     });
 //
 //     it('should return classes has one class only with student which number in input', function () {
@@ -181,7 +181,7 @@ describe('integration test', function () {
 //     it('should add student and set console state to command when input student', function () {
 //         system.consoleState = 'ADD_STUDENT';
 //         spyOn(console, 'log');
-//         system.parseInput('Melo,8,han,1,math:90,chinese:80,english:80,program:90');
+//         system.input('Melo,8,han,1,math:90,chinese:80,english:80,program:90');
 //         const expectStudent = new Student('Melo', '8', 'han', '1', new Subject(90, 80, 80, 90));
 //         expect(console.log).toHaveBeenCalledWith('请输入命令:\n1.添加学生\n2.生成成绩单\n3.退出');
 //         expect(system.classes[0].students[0]).toEqual(expectStudent);
@@ -191,7 +191,7 @@ describe('integration test', function () {
 //         system.consoleState = 'QUERY_SCORE';
 //         system.updateClasses(new Student('Melo', '8', 'han', '1', new Subject(90, 80, 80, 90)));
 //         spyOn(console, 'log');
-//         system.parseInput('8');
+//         system.input('8');
 //         const expectStr = `成绩单
 // 姓名|数学|语文|英语|编程|平均分|总分
 // ==================
@@ -200,6 +200,6 @@ describe('integration test', function () {
 // 全班总成绩平均分:340
 // 全班总成绩中位数:340\n`;
 //         expect(console.log).toHaveBeenCalledWith(expectStr);
-//         expect(system.consoleState).toEqual('MENU_COMMAND');
+//         expect(system.consoleState).toEqual('MENU_COMMAND_EXEC');
 //     });
 // });
